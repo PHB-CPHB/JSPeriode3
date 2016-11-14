@@ -1,5 +1,5 @@
 var mongoose = require( 'mongoose' );
-var dbURI = 'mongodb://localhost/demoJokess';
+var dbURI = 'mongodb://localhost/demoJokes';
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {

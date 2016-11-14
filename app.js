@@ -21,7 +21,7 @@ app.use(function(req, res, next) {
 
 app.use(function (err, req, res, next) {
   console.error(err.status);
-  res.status = err.status || 500;
+  res.status(err.status || 500);
   res.json({msg: err.message,status: err.status});
 })
 

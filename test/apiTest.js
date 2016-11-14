@@ -3,7 +3,9 @@ let connect = require("./plainMongoDriver");
 let ObjectID = require("mongodb").ObjectID;
 let fetch = require("node-fetch");
 const TEST_PORT = 8080;
-const URL = `http://localhost:${TEST_PORT}/api/books`;
+const SERVER_URL = `http://localhost:${TEST_PORT}`;
+const URL = SERVER_URL+"/api/books";
+
 let app = require("./../app");
 
 var joke1 = {
@@ -129,6 +131,16 @@ describe("Jokes API", function () {
         });
       });
     });
+  });
+
+  describe("GET:  /nonExistingRoute", function () {
+    it("should get 404, Non Existing", function (done) {
+      fetch(SERVER_URL+"/nonExistingRoute", {method: 'get'}).then(function (response) {
+        //console.log(response)
+        expect(response.status).to.be.equal(404);
+        done();
+      })
+    })
   });
 });
 
