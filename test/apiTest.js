@@ -4,7 +4,7 @@ let ObjectID = require("mongodb").ObjectID;
 let fetch = require("node-fetch");
 const TEST_PORT = 8080;
 const SERVER_URL = `http://localhost:${TEST_PORT}`;
-const URL = SERVER_URL+"/api/books";
+const URL = SERVER_URL+"/api/jokes";
 
 let app = require("./../app");
 
