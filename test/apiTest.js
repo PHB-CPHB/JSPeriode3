@@ -2,7 +2,7 @@
 let connect = require("./plainMongoDriver");
 let ObjectID = require("mongodb").ObjectID;
 let fetch = require("node-fetch");
-const TEST_PORT = 9999;
+const TEST_PORT = 8080;
 const SERVER_URL = `http://localhost:${TEST_PORT}`;
 const URL = SERVER_URL + "/api/jokes";
 const TEST_DB_CONNECTION = "mongodb://localhost/testJokeDB";
